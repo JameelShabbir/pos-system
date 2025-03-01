@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trash, RefreshCw } from 'lucide-react';
+import { Trash, CopyPlus } from 'lucide-react';
 
 interface OrderItemProps {
   id: number;
@@ -26,14 +26,14 @@ const OrderItem: React.FC<OrderItemProps> = ({ id, name, price, quantity, handle
       </div>
       <div className="flex justify-between items-center">
         <div className="flex">
-          <button className="text-gray-400 mr-2" onClick={removeItem}>
-            <Trash className="w-4 h-4" />
+          <button className="text-gray-400 mr-2" onClick={removeItem} title='delete'>
+            <Trash className="w-4 h-4 text-red-400" />
           </button>
-          <button className="text-gray-400" onClick={refreshItem}>
-            <RefreshCw className="w-4 h-4" />
+          <button className="text-gray-400" onClick={refreshItem} title='Add'>
+            <CopyPlus className="w-4 h-4 text-green-400" />
           </button>
         </div>
-        <span className="font-bold">₹{price * quantity}</span>
+        <span className="font-bold">Rs{price * quantity}</span>
       </div>
     </div>
   );

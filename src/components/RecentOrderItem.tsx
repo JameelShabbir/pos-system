@@ -13,7 +13,7 @@ const RecentOrderItem: React.FC<RecentOrderItemProps> = ({ id, customer, items, 
     <div className="flex items-center justify-between">
       <div className="flex items-center">
         <div className="bg-yellow-500 text-black font-bold rounded-md w-12 h-12 flex items-center justify-center mr-4">
-          AM
+          JA
         </div>
         <div>
           <div className="font-medium">{customer}</div>
