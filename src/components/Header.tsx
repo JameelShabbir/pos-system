@@ -28,11 +28,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, toggleCart }) => {
             <span className="text-white cursor-pointer">JA</span>
           </div>
           <div>
-<<<<<<< HEAD
-            <div className="text-sm font-medium">Aman</div>
-=======
             <div className="text-sm font-medium">Jameel abbas</div>
->>>>>>> 08e27d3f9607748b9a4e939336a61fd15091cd25
             <div className="text-xs text-gray-400">Admin</div>
           </div>
         </div>
