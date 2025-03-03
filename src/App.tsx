@@ -27,7 +27,7 @@ function App() {
     { id: 'soups', name: 'Soups', icon: '🍜', color: 'bg-amber-700', items: 6 },
     { id: 'desserts', name: 'Desserts', icon: '🍰', color: 'bg-blue-800', items: 4 },
     { id: 'pizzas', name: 'Pizzas', icon: '🍕', color: 'bg-green-700', items: 3 },
-    { id: 'alcoholic', name: 'Alcoholic Drinks', icon: '🍷', color: 'bg-red-600', items: 6 },
+    // { id: 'alcoholic', name: 'Alcoholic Drinks', icon: '🍷', color: 'bg-red-600', items: 6 },
     { id: 'salads', name: 'Salads', icon: '🥗', color: 'bg-purple-600', items: 5 }
   ];
 
