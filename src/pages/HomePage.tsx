@@ -98,7 +98,7 @@ const HomePage: React.FC<HomePageProps> = ({ popularDishes, recentOrders }) => {
           <SectionHeader title="Popular Dishes" />
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {popularDishes.map((dish, index) => (
-              <PopularDishCard 
+              <PopularDishCard
                 key={dish.id}
                 id={dish.id}
                 name={dish.name}
