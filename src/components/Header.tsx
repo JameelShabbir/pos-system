@@ -22,18 +22,22 @@ const Header: React.FC<HeaderProps> = ({ currentPage, toggleCart }) => {
         />
       </div>
       <div className="flex items-center">
-        <Bell className="mr-4 hidden sm:block" />
+        <Bell className="mr-4 text-yellow-400 cursor-pointer hidden sm:block" />
         <div className="hidden sm:flex items-center">
           <div className="bg-gray-700 rounded-full w-8 h-8 flex items-center justify-center mr-2">
-            <span className="text-white">A</span>
+            <span className="text-white cursor-pointer">JA</span>
           </div>
           <div>
+<<<<<<< HEAD
             <div className="text-sm font-medium">Aman</div>
+=======
+            <div className="text-sm font-medium">Jameel abbas</div>
+>>>>>>> 08e27d3f9607748b9a4e939336a61fd15091cd25
             <div className="text-xs text-gray-400">Admin</div>
           </div>
         </div>
         {currentPage === 'menu' && (
-          <button 
+          <button
             className="md:hidden bg-[#2a2a2a] p-2 rounded-md ml-2"
             onClick={toggleCart}
           >

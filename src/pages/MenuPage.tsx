@@ -20,12 +20,12 @@ interface MenuPageProps {
   customerName: string;
 }
 
-const MenuPage: React.FC<MenuPageProps> = ({ 
-  navigateTo, 
-  showCart, 
-  toggleCart, 
-  categories, 
-  menuItems, 
+const MenuPage: React.FC<MenuPageProps> = ({
+  navigateTo,
+  showCart,
+  toggleCart,
+  categories,
+  menuItems,
   cartItems,
   handleAddToCart,
   handleQuantityChange,
@@ -61,7 +61,7 @@ const MenuPage: React.FC<MenuPageProps> = ({
       <div className={`${showCart ? 'hidden' : 'flex'} md:flex md:w-3/4 w-full flex-col overflow-hidden`}>
         {/* Menu Header */}
         <div className="flex items-center p-4">
-          <button 
+          <button
             className="flex items-center justify-center bg-blue-600 rounded-full w-10 h-10 mr-3"
             onClick={() => navigateTo('tables')}
           >
@@ -73,7 +73,7 @@ const MenuPage: React.FC<MenuPageProps> = ({
         {/* Menu Categories */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
           {categories.map((category) => (
-            <CategoryCard 
+            <CategoryCard
               key={category.id}
               id={category.id}
               name={category.name}
@@ -89,7 +89,7 @@ const MenuPage: React.FC<MenuPageProps> = ({
         {/* Menu Items */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
           {menuItems.map((item) => (
-            <MenuItem 
+            <MenuItem
               key={item.id}
               id={item.id}
               name={item.name}
@@ -105,14 +105,14 @@ const MenuPage: React.FC<MenuPageProps> = ({
       <div className={`${showCart ? 'flex' : 'hidden'} md:flex md:w-1/4 w-full bg-[#222222] border-l border-gray-700 flex-col`}>
         {/* Mobile Close Button */}
         <div className="md:hidden flex justify-end p-2">
-          <button 
+          <button
             className="bg-[#2a2a2a] p-2 rounded-full"
             onClick={toggleCart}
           >
             <X className="w-5 h-5" />
           </button>
         </div>
-        
+
         {/* Customer Info */}
         <div className="p-4 border-b border-gray-700">
           <div className="flex justify-between items-start">
@@ -128,16 +128,16 @@ const MenuPage: React.FC<MenuPageProps> = ({
                 <div className="mr-2">
                   <div className="text-sm font-medium">{customerName || 'Customer Name'}</div>
                   <div className="text-xs text-gray-400">#101/Dine In</div>
-                  <div className="text-xs text-gray-400">{new Date().toLocaleDateString('en-US', { 
-                    month: 'long', 
-                    day: 'numeric', 
+                  <div className="text-xs text-gray-400">{new Date().toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
                     year: 'numeric',
                     hour: '2-digit',
                     minute: '2-digit'
                   })}</div>
                 </div>
                 <div className="bg-yellow-500 text-black font-bold rounded-md px-2 py-1">
-                  CN
+                  JA
                 </div>
               </div>
             </div>
@@ -149,14 +149,16 @@ const MenuPage: React.FC<MenuPageProps> = ({
           <h3 className="font-medium mb-4">Order Details</h3>
           {cartItems.length > 0 ? (
             cartItems.map((item) => (
-              <OrderItem 
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                price={item.price}
-                quantity={item.quantity}
-                handleQuantityChange={handleQuantityChange}
-              />
+              <div className='bg-[#2a2a2a] p-1 my-1 border-spacing-1 rounded-md'>
+                <OrderItem
+                  key={item.id}
+                  id={item.id}
+                  name={item.name}
+                  price={item.price}
+                  quantity={item.quantity}
+                  handleQuantityChange={handleQuantityChange}
+                />
+              </div>
             ))
           ) : (
             <div className="text-center py-8 text-gray-400">
@@ -169,20 +171,20 @@ const MenuPage: React.FC<MenuPageProps> = ({
         <div className="p-4 border-t border-gray-700">
           <div className="flex justify-between mb-2">
             <span className="text-gray-400">Items({cartItems.length})</span>
-            <span className="font-bold">₹{calculateTotal()}</span>
+            <span className="font-bold">₨{calculateTotal()}</span>
           </div>
           <div className="flex justify-between mb-4">
             <span className="text-gray-400">Tax(5.25%)</span>
-            <span className="font-bold">₹{calculateTax()}</span>
+            <span className="font-bold">₨{calculateTax()}</span>
           </div>
           <div className="grid grid-cols-2 gap-2 mb-4">
-            <button 
+            <button
               className={`py-2 rounded-md ${paymentMethod === 'cash' ? 'bg-yellow-500 text-black font-bold' : 'bg-[#2a2a2a]'}`}
               onClick={() => setPaymentMethod('cash')}
             >
               Cash
             </button>
-            <button 
+            <button
               className={`py-2 rounded-md ${paymentMethod === 'online' ? 'bg-yellow-500 text-black font-bold' : 'bg-[#2a2a2a]'}`}
               onClick={() => setPaymentMethod('online')}
             >
@@ -190,14 +192,14 @@ const MenuPage: React.FC<MenuPageProps> = ({
             </button>
           </div>
           <div className="grid grid-cols-2 gap-2">
-            <button 
+            <button
               className="bg-blue-600 py-3 rounded-md"
               onClick={handlePrintReceipt}
               disabled={cartItems.length === 0}
             >
               Print Receipt
             </button>
-            <button 
+            <button
               className="bg-yellow-500 text-black font-bold py-3 rounded-md"
               onClick={handlePlaceOrder}
               disabled={cartItems.length === 0}

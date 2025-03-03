@@ -19,7 +19,7 @@ function App() {
   const [customerPhone, setCustomerPhone] = useState('');
   const [guestCount, setGuestCount] = useState(0);
   const [orders, setOrders] = useState<any[]>([]);
-  
+
   const categories: Category[] = [
     { id: 'starters', name: 'Starters', icon: '🍲', color: 'bg-red-500', items: 6 },
     { id: 'main', name: 'Main Course', icon: '🍛', color: 'bg-purple-500', items: 6 },
@@ -112,35 +112,35 @@ function App() {
 
   const popularDishes: PopularDish[] = [
     { id: 1, name: 'Butter Chicken', orders: 250, image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
-    { id: 2, name: 'Palak Paneer', orders: 190, image: 'https://images.unsplash.com/photo-1596797038530-2c107aa4e0dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
+    { id: 2, name: 'Palak Paneer', orders: 190, image: 'https://t3.ftcdn.net/jpg/08/24/35/48/360_F_824354853_s8KRJsemDVYTcRgLV079vjzHkHj4uqKL.jpg' },
     { id: 3, name: 'Hyderabadi Biryani', orders: 300, image: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
     { id: 4, name: 'Masala Dosa', orders: 220, image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
-    { id: 5, name: 'Chole Bhature', orders: 270, image: 'https://images.unsplash.com/photo-1626132647523-66c5fe50a9df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
+    { id: 5, name: 'Chole Bhature', orders: 270, image: 'https://t4.ftcdn.net/jpg/07/54/78/25/360_F_754782526_PlvME8TT9ONtd9ZnWo7uEai6GO1q5Yoi.jpg' },
     { id: 6, name: 'Rajma Chawal', orders: 180, image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
-    { id: 7, name: 'Paneer Tikka', orders: 210, image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' }
+    { id: 7, name: 'Paneer Tikka', orders: 210, image: 'https://www.archanaskitchen.com//images/archanaskitchen/1-Author/Neha_Mathur/Achari_Paneer_Tikka_Recipe_Party_Food.JPG' }
   ];
 
   const recentOrders: RecentOrder[] = [
-    { id: 1, customer: 'Amrit Raj', items: 8, table: 3, status: 'Ready to serve' },
-    { id: 2, customer: 'Amrit Raj', items: 8, table: 3, status: 'Ready to serve' },
-    { id: 3, customer: 'Amrit Raj', items: 8, table: 3, status: 'Ready to serve' },
-    { id: 4, customer: 'Amrit Raj', items: 8, table: 3, status: 'Ready to serve' },
-    { id: 5, customer: 'Amrit Raj', items: 8, table: 3, status: 'Ready to serve' }
+    { id: 1, customer: 'Jameel Abbas', items: 8, table: 3, status: 'Ready to serve' },
+    { id: 2, customer: 'Jameel Abbas', items: 8, table: 3, status: 'Ready to serve' },
+    { id: 3, customer: 'Jameel Abbas', items: 8, table: 3, status: 'Ready to serve' },
+    { id: 4, customer: 'Jameel Abbas', items: 8, table: 3, status: 'Ready to serve' },
+    { id: 5, customer: 'Jameel Abbas', items: 8, table: 3, status: 'Ready to serve' }
   ];
 
   const handleAddToCart = (item: MenuItem) => {
     const existingItem = cartItems.find(cartItem => cartItem.id === item.id);
-    
+
     if (existingItem) {
-      setCartItems(cartItems.map(cartItem => 
-        cartItem.id === item.id 
-          ? { ...cartItem, quantity: cartItem.quantity + 1 } 
+      setCartItems(cartItems.map(cartItem =>
+        cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
           : cartItem
       ));
     } else {
       setCartItems([...cartItems, { ...item, quantity: 1 }]);
     }
-    
+
     // Show cart after adding item
     if (!showCart) {
       setShowCart(true);
@@ -210,13 +210,13 @@ function App() {
       date: new Date().toLocaleDateString(),
       products: [...cartItems]
     };
-    
+
     // Add to orders
     setOrders([...orders, newOrder]);
-    
+
     // Clear cart
     setCartItems([]);
-    
+
     // Navigate to orders page
     navigateTo('orders');
   };
@@ -229,14 +229,14 @@ function App() {
       {/* Main Content */}
       <div className="flex flex-1 overflow-hidden">
         {currentPage === 'home' && (
-          <HomePage 
-            popularDishes={popularDishes} 
-            recentOrders={recentOrders} 
+          <HomePage
+            popularDishes={popularDishes}
+            recentOrders={recentOrders}
           />
         )}
-        
+
         {currentPage === 'menu' && (
-          <MenuPage 
+          <MenuPage
             navigateTo={navigateTo}
             showCart={showCart}
             toggleCart={toggleCart}
@@ -251,17 +251,17 @@ function App() {
             customerName={customerName}
           />
         )}
-        
+
         {currentPage === 'tables' && (
-          <TablesPage 
+          <TablesPage
             tables={tables}
             onTableSelect={handleTableSelect}
             navigateTo={navigateTo}
           />
         )}
-        
+
         {currentPage === 'orders' && (
-          <OrdersPage 
+          <OrdersPage
             navigateTo={navigateTo}
           />
         )}
@@ -269,7 +269,7 @@ function App() {
 
       {/* Create Order Modal */}
       {showCreateOrderModal && (
-        <CreateOrderModal 
+        <CreateOrderModal
           onClose={closeCreateOrderModal}
           onCreateOrder={handleCreateOrder}
           customerName={customerName}
@@ -282,9 +282,9 @@ function App() {
       )}
 
       {/* Bottom Navigation */}
-      <BottomNavigation 
-        currentPage={currentPage} 
-        navigateTo={navigateTo} 
+      <BottomNavigation
+        currentPage={currentPage}
+        navigateTo={navigateTo}
         openCreateOrderModal={openCreateOrderModal}
       />
     </div>
