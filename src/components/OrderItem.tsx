@@ -26,11 +26,11 @@ const OrderItem: React.FC<OrderItemProps> = ({ id, name, price, quantity, handle
       </div>
       <div className="flex justify-between items-center">
         <div className="flex">
-          <button className="text-gray-400 mr-2" onClick={removeItem} title='delete'>
-            <Trash className="w-4 h-4 text-red-400" />
+          <button className="text-gray-400 mr-2" onClick={removeItem}>
+            <Trash className="w-4 h-4 text-red-500" />
           </button>
-          <button className="text-gray-400" onClick={refreshItem} title='Add'>
-            <CopyPlus className="w-4 h-4 text-green-400" />
+          <button className="text-gray-400" onClick={refreshItem}>
+            <p className="">+1</p>
           </button>
         </div>
         <span className="font-bold">Rs{price * quantity}</span>

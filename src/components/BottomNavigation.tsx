@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, ClipboardList, Bell, CookingPot, Table as TableIcon, MoreHorizontal } from 'lucide-react';
+import { Home, ClipboardList, Bell, Table as TableIcon, MoreHorizontal, CupSodaIcon } from 'lucide-react';
 
 interface BottomNavigationProps {
   currentPage: string;
@@ -35,8 +35,7 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({
               className="bg-yellow-500 rounded-full w-14 h-14 flex items-center justify-center cursor-pointer"
               onClick={openCreateOrderModal} title='create order'
             >
-              {/* <Bell  /> */}
-              <CookingPot className="w-6 h-6 text-black" />
+              <CupSodaIcon className="w-6 h-6 text-black" />
             </div>
           </div>
         </div>
