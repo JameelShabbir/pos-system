@@ -47,7 +47,7 @@ const TablesPage: React.FC<TablesPageProps> = ({ tables, onTableSelect, navigate
           {filteredTables.map(table => (
             <div 
               key={table.id}
-              className="bg-[#222222] rounded-lg p-4 cursor-pointer"
+              className="bg-zinc-700 rounded-lg p-4 cursor-pointer hover:bg-zinc-600"
               onClick={() => onTableSelect(table.id)}
             >
               <div className="flex justify-between items-start mb-4">

@@ -77,7 +77,7 @@ const OrdersPage: React.FC<OrdersPageProps> = ({ navigateTo }) => {
         {filteredOrders.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filteredOrders.map((order) => (
-              <div key={order.id} className="bg-[#2a2a2a] rounded-lg p-4 flex flex-col justify-between">
+              <div key={order.id} className="bg-zinc-700 hover:bg-zinc-600 rounded-lg p-4 flex flex-col justify-between">
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <div className="flex items-center">

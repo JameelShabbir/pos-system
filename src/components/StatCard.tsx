@@ -10,7 +10,7 @@ interface StatCardProps {
 
 const StatCard: React.FC<StatCardProps> = ({ title, value, change, icon, iconBgColor }) => {
   return (
-    <div className="bg-[#222222] rounded-lg p-3">
+    <div className="bg-zinc-700 rounded-lg p-3">
       <h2 className="text-lg font-medium mb-2">{title}</h2>
       <div className="flex items-center">
         <div className={`${iconBgColor} p-2 rounded-lg mr-4`}>

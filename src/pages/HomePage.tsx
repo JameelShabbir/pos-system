@@ -66,7 +66,7 @@ const HomePage: React.FC<HomePageProps> = ({ popularDishes, recentOrders }) => {
             />
           </div>
 
-          <div className="bg-[#222222] rounded-lg p-6">
+          <div className="bg-zinc-700 rounded-lg p-6">
             <SectionHeader title="Recent Orders" />
             <div className="relative mb-4">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
